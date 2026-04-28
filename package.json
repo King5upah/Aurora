@@ -4,6 +4,8 @@
   "description": "Un workspace construido para que humanos e IA trabajen juntos — no un IDE con IA pegada encima, sino un entorno compartido donde ambos operan como co-usuarios del mismo espacio.",
   "main": "index.js",
   "scripts": {
+    "dev": "vite",
+    "build": "vite build",
     "test": "vitest run",
     "test:watch": "vitest",
     "test:rust": "cd src-tauri && cargo test"
