@@ -1,0 +1,40 @@
+{
+  "name": "aurora",
+  "version": "1.0.0",
+  "description": "Un workspace construido para que humanos e IA trabajen juntos — no un IDE con IA pegada encima, sino un entorno compartido donde ambos operan como co-usuarios del mismo espacio.",
+  "main": "index.js",
+  "scripts": {
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "test:rust": "cd src-tauri && cargo test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/King5upah/Aurora.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "bugs": {
+    "url": "https://github.com/King5upah/Aurora/issues"
+  },
+  "homepage": "https://github.com/King5upah/Aurora#readme",
+  "devDependencies": {
+    "@testing-library/jest-dom": "^6.9.1",
+    "@testing-library/react": "^16.3.2",
+    "@testing-library/user-event": "^14.6.1",
+    "@vitejs/plugin-react": "^6.0.1",
+    "jsdom": "^29.1.0",
+    "typescript": "^6.0.3",
+    "vite": "^8.0.10",
+    "vitest": "^4.1.5"
+  },
+  "dependencies": {
+    "@types/react": "^19.2.14",
+    "@types/react-dom": "^19.2.3",
+    "react": "^19.2.5",
+    "react-dom": "^19.2.5",
+    "zustand": "^5.0.12"
+  }
+}
