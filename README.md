@@ -1,62 +1,62 @@
 # Aurora
 
-A workspace built for humans and AI to work together — not an AI-powered IDE, but a shared environment where both operate as co-users of the same space.
+Un workspace construido para que humanos e IA trabajen juntos — no un IDE con IA pegada encima, sino un entorno compartido donde ambos operan como co-usuarios del mismo espacio.
 
-## Concept
+## Concepto
 
-Most IDEs treat AI as a feature bolted on top. Aurora inverts this: the Claude conversation is the primary interface, and everything else — terminals, editor, browser, knowledge base — spawns from it as needed.
+La mayoría de los IDEs tratan a la IA como un feature adicional. Aurora invierte esto: la conversación con Claude es la interfaz principal, y todo lo demás — terminales, editor, navegador, base de conocimiento — aparece desde ahí cuando se necesita.
 
-The goal is a fast, keyboard-driven workspace where you never have to leave to get context, run code, preview a page, or check how close you are to blowing the context window.
+El objetivo es un workspace rápido, manejado por teclado, donde nunca tengas que salir para obtener contexto, correr código, previsualizar una página, o saber qué tan cerca estás de reventar la ventana de contexto.
 
-## Panels
+## Paneles
 
-Panels are invoked on demand and dismissed when not needed:
+Los paneles se invocan bajo demanda y se cierran cuando no se necesitan:
 
-- **Claude** — Claude Code session, always present
-- **Terminal** — one or two PTY instances
-- **Editor** — lightweight code editor with syntax highlighting (Tree-sitter)
-- **Boreal** — embedded WebKit browser for previewing web work
-- **Saturno** — interactive graph of the project knowledge base
-- **Mission Telemetry** — real-time stats: token usage, context meter, degradation indicator, conversation management
+- **Claude** — sesión de Claude Code, siempre presente
+- **Terminal** — una o dos instancias PTY
+- **Editor** — editor de código ligero con syntax highlighting (Tree-sitter)
+- **Boreal** — navegador WebKit embebido para previsualizar trabajo web
+- **Saturno** — grafo interactivo de la base de conocimiento del proyecto
+- **Mission Telemetry** — stats en tiempo real: uso de tokens, medidor de contexto, indicador de degradación, gestión de conversaciones
 
-## Navigation
+## Navegación
 
-- `Cmd + Arrow` — move between panels / temporary fullscreen
-- `Opt + Number` — jump to specific subtab
-- `Opt + Arrow` — move between subtabs sequentially
+- `Cmd + Flecha` — moverse entre paneles / fullscreen temporal
+- `Opt + Número` — saltar a subtab específica
+- `Opt + Flecha` — moverse entre subtabs secuencialmente
 
 ## Mission Telemetry
 
-Observability for your Claude session:
+Observabilidad de tu sesión con Claude:
 
-- Context window meter (how full it is, not just when it collapses)
-- Context degradation indicator (gradual, not binary)
-- Compaction warning before auto-collapse happens
-- Approximate token count per conversation
-- Usage graphs over time
-- Commands: `/compact`, `/clear`, new session
+- Medidor de ventana de contexto (qué tan llena está, no solo cuando colapsa)
+- Indicador de degradación de contexto (gradual, no binario)
+- Aviso de compactación antes de que colapse automáticamente
+- Conteo aproximado de tokens por conversación
+- Gráficas de uso en el tiempo
+- Comandos: `/compact`, `/clear`, nueva sesión
 
-Tokens are counted locally using a tokenizer — Aurora tracks context independently without relying on Claude Code's output.
+Los tokens se cuentan localmente con un tokenizador — Aurora lleva la cuenta de manera independiente sin depender del output de Claude Code.
 
 ## Saturno
 
-A Markdown knowledge base that lives in the workspace. Long-term memory for the project: features, architecture decisions, tools, incident post-mortems. Navigable as an interactive D3.js graph rendered inside Boreal.
+Una base de conocimiento en Markdown que vive en el workspace. Memoria de largo plazo del proyecto: features, decisiones de arquitectura, herramientas, post-mortems de bugs. Navegable como un grafo interactivo D3.js renderizado dentro de Boreal.
 
-Not a wiki for humans. A reference file for the agent — so sessions start with context loaded, not from scratch.
+No es una wiki para humanos. Es un archivo de referencia para el agente — para que las sesiones arranquen con contexto cargado, no desde cero.
 
 ## Stack
 
-- **Tauri** (Rust + WebKit) — native on macOS and Linux
+- **Tauri** (Rust + WebKit) — nativo en macOS y Linux
 - **Frontend** — React, MVVM
-- **Terminal** — PTY via Rust backend
-- **Browser** — WKWebView (macOS) / WebKitGTK (Linux), no Chromium dependency
-- **Tokenizer** — local token counting, no API calls needed for telemetry
+- **Terminal** — PTY via backend en Rust
+- **Navegador** — WKWebView (macOS) / WebKitGTK (Linux), sin dependencia de Chromium
+- **Tokenizador** — conteo local de tokens, sin llamadas a la API para telemetría
 
-## Platforms
+## Plataformas
 
-- macOS (primary)
-- Linux (planned)
+- macOS (principal)
+- Linux (planeado)
 
-## Status
+## Estado
 
-Early planning. Nothing runs yet.
+Planeación temprana. Todavía no corre nada.
